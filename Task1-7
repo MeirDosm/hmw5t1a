@@ -1,0 +1,236 @@
+#include <iostream>
+#include <stdio.h>
+#include <math.h>
+using namespace std;
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char** argv) {
+	
+	start:
+		cout << "Vvedite nomer zadaniya : ";
+		int n=0;
+		cin >> n;
+		
+		if (n==1)
+		{
+			int n;
+	
+        	while (n!=0)
+	        {
+		        cout << "Vvedite chislo v intervale ot -5 do 5: " << endl;
+		        cin >> n;
+	        }
+	        
+	        goto start;
+		}
+		
+		else if (n==2)
+		{
+			int i,j;
+	        int N;
+	        int M;
+	        int S=0;
+	        int P=0;
+	        cout << "Vvedite chislo N: " << endl;
+	        cin >> N;
+	        cout << "Vvedite chislo M: " << endl;
+	        cin >> M;
+	
+            for (i=1;i<=N;i++)
+            {
+    	        S+=i;
+	        }
+	
+	        cout << "Summa chisel ot 1 do " << N << " ravna: " << S << endl;
+	        P=S;
+	        for (j=2;j<=M;j++)
+	        {
+		
+		        P*=S;
+	        }
+	        cout << "Summa chisel ot 1 do " << N << " vozvedennaya v stepen' " << M << " ravna: " << P << endl;
+	        
+	        goto start;
+		}
+		
+		else if (n==3)
+		{
+				int i=0;
+	            float B, TR=0, A, S;
+	            int count = 0;
+	            cout << "Vvedite summu nakoplenii studenta v tenge: " << endl;
+	            cin >> S;
+	            cout << "Vvedite stipendiyu studenta v tenge: " << endl;
+	            cin >> A;
+	            cout << "Vvedite summu rashodov v tenge, rashody dolzhny prevyshat' stipendiyu: " << endl;
+	            cin >> B;
+	            for (i=2;i<=100;i++)
+	            {
+		            B=B+(0.03*B);
+		            TR+=B;
+		            if (((S+(A*i))-TR)>0)
+		            {
+			            count++;
+		            }
+	            }
+	
+	            cout << "Posle " << count << " mesyacev u studenta ne budet sredtsv. " << endl;
+	            
+	            goto start;
+		}
+		
+		else if (n==4)
+		{
+			int n,n1,n2,n3;
+	        int m;
+	        int i;
+	        int k;
+	
+	        cout << "Vvedite chislo n < 9999: " << endl;
+	        cin >> n;
+	        cout << "Vvedite chislo m  (poslednie cifry chisla " << n << ", chislo m dolzhno byt' men'she kolichestva cifr v chisle " << n << endl;
+	        cin >> m;
+	
+	
+	
+	
+	
+	        for (i=4;i>=1;i--)
+	        {
+		        k=pow(10,i);
+		        n%=k;    
+	        }
+        	n1=n;
+        	cout << "1 posl. cifra chisla n: " << n1 << endl;
+	
+	
+	        if(m>=2)
+	        {
+	            cout << "Vvedite snova tozhe chislo n : " << endl;
+	            cin >> n;
+	            for (i=4;i>=2;i--)
+	            {
+		            k=pow(10,i);
+	            	n%=k;	    
+	            }
+	        n2=(n-n1)/10;
+	        cout << "2 posl. cifra chisla n: " << n2 << endl;
+	  
+	            if(m==3)
+	            {
+	                cout << "Vvedite snova tozhe chislo n : " << endl;
+	                cin >> n;
+	                for (i=4;i>=3;i--)
+	                {
+		                k=pow(10,i);
+		                n%=k;	    
+	                }
+	            n3=(n-n1-(n2*10))/100;
+	            cout << "3 posl. cifra chisla n: " << n3 << endl;
+	        
+	            }
+	   
+	        }
+	        
+	        goto start;
+		}
+		
+		else if (n==5)
+		{
+			int n, n1, n2, n3;
+	        int k, k1, k2, k3, k4;
+	
+	        for (n=100;n<=999;n++)
+	        {
+		        n1=n/100;
+		        n2=(n%100)/10;
+		        n3=(n%10);
+		        if ((pow(n1,3))+(pow(n2,3))+(pow(n3,3))==n)
+		        {
+		            cout << n1 << endl;
+		            cout << n2 << endl;
+		            cout << n3 << endl;
+		            cout << n << endl;
+	            }
+	        }
+	
+	        for (k=1000;k<=9999;k++)
+	        {
+		        k1=k/1000;
+		        k2=(k%1000)/100;
+		        k3=(k%100)/10;
+		        k4=(k%10);
+		
+		        if ((pow(k1,4))+(pow(k2,4))+(pow(k3,4))+(pow(k4,4))==k)
+		        {
+			        cout << k1 << endl;
+			        cout << k2 << endl;
+			        cout << k3 << endl;
+			        cout << k4 << endl;
+			        cout << k << endl;
+		        }
+	        }
+	        
+	        goto start;
+		}
+		
+		else if (n==6)
+		{
+			int n, n1, n2, n3;
+	
+	        for (n=1;n<=999;n++)
+	        {
+		        n1 = n/100;
+		        n2 =(n%100)/10;
+		        n3 =(n%10);
+		
+		        if ((n%7==0)&&((n1+n2+n3)%7==0))
+		        {
+			        cout << n1 << endl;
+			        cout << n2 << endl;
+			        cout << n3 << endl;
+			
+			        cout << n << endl;
+		        }
+	        }
+	        
+	        goto start;
+		}
+		
+		else if (n==7)
+		{
+			int i,j;
+	        int n, l;
+	        int a[5];
+	        int b[5];
+	
+	
+	        cout << "Vvedite chislo n < 10000: " << endl;
+	        cin >> n;
+	
+	        for (i=0;i<=4;i++)
+	        {
+		        l=n%8;
+		        n/=8;
+		        a[i]=l;
+	        }
+		
+		
+		    for (i=4, j=0;i>=0;i--,j++ )
+		    {
+			    b[j]=a[i];
+		    }
+		    for (j=0;j<=4;j++)
+		    {
+			    cout << b[j] << endl;
+		    }
+	        
+	        goto start;
+		}
+		
+		else
+		{
+			cout << "Udachi!";
+		}
+	return 0;
+}
